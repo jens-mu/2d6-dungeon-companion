@@ -7,7 +7,7 @@
     </header>
 
     <div class="flex w-full flex-1 overflow-hidden">
-      <aside class="w-64 flex-none border-r border-slate-700 bg-slate-800 p-4">
+      <aside class="h-full flex-none overflow-hidden">
         <slot name="left-sidebar"></slot>
       </aside>
 
@@ -15,10 +15,11 @@
         <slot></slot>
       </main>
 
-      <aside class="w-64 flex-none border-l border-slate-700 bg-slate-800 p-4">
+      <aside class="h-full flex-none overflow-hidden">
         <slot name="right-sidebar"></slot>
       </aside>
     </div>
+
     <footer
       class="z-20 flex h-12 w-full flex-none items-center justify-between border-t border-slate-700 bg-slate-800 px-4"
     >

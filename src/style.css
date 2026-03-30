@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* 1. RESET: Das ist entscheidend für App-Layouts */
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+/* 1. RESET */
 html,
 body,
 #app {
@@ -10,37 +10,60 @@ body,
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Verhindert das Scrollen der gesamten Seite */
+  overflow: hidden;
 }
 
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  /* ... deine restlichen Variablen ... */
+  /* Helles Farbschema (Notizbuch-Stil) */
+  --bg: #f8fafc; /* Sehr helles Grau-Blau (Slate 50) */
+  --bg-sidebar: #ffffff; /* Reinweiß für die Sidebars */
+  --bg-accent: #f1f5f9; /* Etwas dunkler für Hover-Effekte (Slate 100) */
 
-  /* 2. ANPASSUNG: Schriftgröße auf dem Root belassen, aber nicht das Layout sprengen */
-  font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.45;
-  letter-spacing: 0.18px;
+  --text: #475569; /* Haupttext (Slate 600) */
+  --text-h: #0f172a; /* Überschriften (Slate 900) */
+  --accent: #fb923c; /* Dein Orange für Highlights */
+  --border: #e2e8f0; /* Subtile Linien (Slate 200) */
 
-  color-scheme: light dark;
+  /* Typografie */
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  --font-sketch: 'Reenie Beanie', cursive;
+  font-size: 16px; /* Etwas kleinerer Standard für App-UIs */
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
-
-  /* ... restliche Optimierungen ... */
 }
 
-/* 3. DARK MODE FIX: Stelle sicher, dass die Hintergrundfarbe 
-   deiner Variablen auch wirklich auf den Body angewendet wird */
+/* 2. BODY GLOBAL FIX */
+body {
+  font-family: var(--font-sketch);
+  font-size: 20px; /* Reenie Beanie braucht etwas mehr Größe zum Atmen */
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* 3. OPTIONALER DARK MODE (auskommentiert oder dezent) */
+/* Falls du ihn später willst, hier die Variablen überschreiben */
 @media (prefers-color-scheme: dark) {
+  /* Wenn du ein rein helles Design erzwingen willst, lösche diesen Block */
   :root {
-    --text: #9ca3af;
-    --bg: #16171d;
-    /* ... */
+    /* --bg: #0f172a; */
   }
-  body {
-    background-color: var(--bg);
-  }
+}
+
+/* 4. UTILITIES FÜR DEINE KOMPONENTEN */
+.drawer-content {
+  background-color: var(--bg-sidebar);
+  border-color: var(--border);
+}
+
+.icon-sketch {
+  /* Verleiht den Icons einen leichten Graphit-Look, falls sie zu schwarz sind */
+  filter: grayscale(1) contrast(0.9);
 }

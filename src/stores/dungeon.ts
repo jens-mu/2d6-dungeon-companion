@@ -44,7 +44,8 @@ export const useDungeonStore = defineStore('dungeon', {
     gridSize: 40,
     isInitialized: false,
     currentMode: 'pan' as 'pan' | 'room' | 'path',
-    selectedElementId: null as string | null
+    selectedElementId: null as string | null,
+    currentZoom: 1,
   }),
 
   getters: {
@@ -59,7 +60,7 @@ export const useDungeonStore = defineStore('dungeon', {
       const level = state.levels[state.currentLevelIndex]
       if (!level) return null
       return level.rooms.find((r) => r.id === state.selectedElementId) || null
-    }
+    },
   },
 
   actions: {
@@ -79,9 +80,9 @@ export const useDungeonStore = defineStore('dungeon', {
             type: 'entrance',
             x: Math.floor(width / 2),
             y: 0, // Placed at the top edge by default
-            icon: '🪜'
-          }
-        ]
+            icon: '🪜',
+          },
+        ],
       }
 
       this.levels.push(newLevel)
@@ -128,9 +129,7 @@ export const useDungeonStore = defineStore('dungeon', {
 
       // 1. Check if it touches an entity (Entrance/Exit)
       const touchesEntity = level.entities.some(
-        (e) =>
-          (Math.abs(e.x - x) <= 1 && e.y === y) ||
-          (Math.abs(e.y - y) <= 1 && e.x === x)
+        (e) => (Math.abs(e.x - x) <= 1 && e.y === y) || (Math.abs(e.y - y) <= 1 && e.x === x),
       )
       if (touchesEntity) return true
 
@@ -144,6 +143,6 @@ export const useDungeonStore = defineStore('dungeon', {
       })
 
       return touchesRoom
-    }
-  }
+    },
+  },
 })
