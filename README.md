@@ -33,7 +33,7 @@ The project is organized into a modular component architecture:
 
 This project is an independent production and is published under the **2D6 Dungeon Third Party License**.
 
-> **2D6 Dungeon Companion** is an independent production by **[Your Name/Nickname]** and is not affiliated with **DR Games** or **Toby Lancaster**. It is published under the 2D6 Dungeon Third Party License. 2D6 Dungeon is copyright of **DR Games** and **Toby Lancaster**.
+> **2D6 Dungeon Companion** is an independent production by **Jens Muckel** and is not affiliated with **DR Games** or **Toby Lancaster**. It is published under the 2D6 Dungeon Third Party License. 2D6 Dungeon is copyright of **DR Games** and **Toby Lancaster**.
 
 The "2D6 Dungeon Compatible" logo is a trademark of DR Games and is used here to indicate compatibility as encouraged by the license terms.
 
