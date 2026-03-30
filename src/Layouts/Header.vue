@@ -11,6 +11,6 @@ import RoughCanvas from '../components/ui/helpers/RoughCanvas.vue'
       <span class="font-sketch pt-2 text-4xl text-slate-800">Companion</span>
     </div>
 
-    <div class="z-10 flex gap-4"></div>
+    <div class="z-10 flex gap-6"></div>
   </header>
 </template>
