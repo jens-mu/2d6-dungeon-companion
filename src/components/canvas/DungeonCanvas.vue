@@ -39,7 +39,7 @@ onMounted(() => {
   stage.add(gridLayer)
 
   const img = new Image()
-  img.src = '/src/assets/background_raster.svg' //
+  img.src = '/src/assets/hatching.svg' //
   img.onload = () => {
     patternImage.value = img
     renderLevel()
